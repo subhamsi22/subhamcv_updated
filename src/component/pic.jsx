@@ -17,8 +17,8 @@ export default function Pic() {
                 gsap.to(imgref.current, {
                     y: 20,
                     duration: 2,
-                  
-                  
+
+
                     ease: "sine.inOut"
                 })
             }
@@ -41,9 +41,10 @@ export default function Pic() {
                 onMouseLeave={handleHoverExit}
                 src={h}
                 alt="profile"
-                className='w-64 h-64 o cursor-pointer absolute z-5 top-[65%]'
+                className='w-64 h-64 o cursor-pointer absolute z-5 top-[67%]'
             />
         </div>
+
     )
 }
 
