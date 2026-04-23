@@ -1,8 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 import h from '../pics/h.png'
 
+
 export default function Pic() {
+
+    const [nme, setnme] = useState("are you worried for your project")
+    const [but, setbut] = useState("click me")
     const imgref = useRef(null);
 
     useEffect(() => {
@@ -43,6 +47,11 @@ export default function Pic() {
                 alt="profile"
                 className='w-64 h-64 o cursor-pointer absolute z-5 top-[67%]'
             />
+            <h1 className='absolute top-[100%] left-55 capitalize  text-2xl dynapuff'>
+                {nme}
+            </h1>
+            <button className='hover:scale-110 absolute top-[100%] left-[58%] bg-black text-white rounded  capitalize  text-2xl dynapuff'>{but} </button>
+
         </div>
 
     )

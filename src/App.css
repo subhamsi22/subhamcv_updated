@@ -8,5 +8,22 @@
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+#move {
+    position: fixed;
+
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    z-index: 999;
+    color: #808080;
+    pointer-events: none;
+}
+
+#move2 {
+    transition: 0.2s;
 }

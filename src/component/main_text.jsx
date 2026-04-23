@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react'
+
 import gsap from 'gsap'
 
 const MainText = ({ displayText }) => {
   const textRef = useRef(null)
+  const animateref = useRef(null)
 
   useEffect(() => {
     if (!displayText) return;
@@ -19,6 +21,16 @@ const MainText = ({ displayText }) => {
       ease: "power4.out",
       delay: 0.2
     })
+    // gsap.set(animateref, { opacity: 0, y: 50 })
+
+    // gsap.to(animateref, {
+    //   rotate: 360,
+    //   yoyo: true,
+    //   repeat: -1,
+    //   duration: 2,
+    //   delay: 1
+
+    // })
   }, [displayText])
 
   return (
@@ -27,7 +39,7 @@ const MainText = ({ displayText }) => {
         ref={textRef}
         className='hover:text-black text-[#01303f] text-9xl text-center cinzel-decorative-bold flex flex-wrap justify-center'
       >
-        {displayText?.split("").map((char, index) => (
+        {(Array.isArray(displayText) ? displayText : displayText.split("")).map((char, index) => (
           <span
             key={index}
             className="char inline-block"
@@ -37,6 +49,7 @@ const MainText = ({ displayText }) => {
           </span>
         ))}
       </h1>
+      {/* <p ref={animateref} className=' left-[-27%] relative hover:text-black text-[#01303f] text-9xl text-center cinzel-decorative-bold flex flex-wrap justify-center'>o</p> */}
     </div>
   )
 }
