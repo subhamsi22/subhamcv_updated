@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 import h from '../pics/h.png'
+import '../App.css'
 
 
 export default function Pic() {
@@ -38,19 +39,19 @@ export default function Pic() {
     }
 
     return (
-        <div className='flex justify-center items-center '>
+        <div  >
             <img
                 ref={imgref}
                 onMouseEnter={handleHover}
                 onMouseLeave={handleHoverExit}
                 src={h}
                 alt="profile"
-                className='w-64 h-64 o cursor-pointer absolute z-5 top-[67%]'
+                className='w-64 h-64 relative  cursor-pointer left-[40%]  z-5 mt-[-200px] '
             />
-            <h1 className='absolute top-[100%] left-55 capitalize  text-2xl dynapuff'>
+            <h1 className='relative left-[15%]  mt-[-5%]  capitalize  text-2xl dynapuff '>
                 {nme}
             </h1>
-            <button className='hover:scale-110 absolute top-[100%] left-[58%] bg-black text-white rounded  capitalize  text-2xl dynapuff'>{but} </button>
+            <button id="ss" className=' hover:scale-110 relative  mt-[-18%]  left-[58%] bg-black text-white rounded  capitalize  text-2xl dynapuff'>{but} </button>
 
         </div>
 

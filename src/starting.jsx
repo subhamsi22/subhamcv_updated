@@ -18,13 +18,40 @@ export default function Starting() {
     const opref = useRef(null)
     const hhref = useRef(null)
     const opreff = useRef(null)
+    const moveRef = useRef(null)
+    const containerRef = useRef(null)
 
-    function mouse(e) {
-        document.getElementById("move").style.left = e.x + "px"
-        document.getElementById("move").style.top = e.y + "px"
-    }
+    useEffect(() => {
+        const mouse = (e) => {
+            if (moveRef.current) {
+                moveRef.current.style.left = e.clientX + "px"
+                moveRef.current.style.top = e.clientY + "px"
+            }
+        }
 
-    window.addEventListener("mousemove", mouse)
+        const handleMouseEnter = () => {
+            if (moveRef.current) moveRef.current.style.display = "block"
+        }
+
+        const handleMouseLeave = () => {
+            if (moveRef.current) moveRef.current.style.display = "none"
+        }
+
+        const container = containerRef.current
+        if (container) {
+            container.addEventListener("mousemove", mouse)
+            container.addEventListener("mouseenter", handleMouseEnter)
+            container.addEventListener("mouseleave", handleMouseLeave)
+        }
+
+        return () => {
+            if (container) {
+                container.removeEventListener("mousemove", mouse)
+                container.removeEventListener("mouseenter", handleMouseEnter)
+                container.removeEventListener("mouseleave", handleMouseLeave)
+            }
+        }
+    }, [])
 
 
     useEffect(() => {
@@ -55,7 +82,7 @@ export default function Starting() {
             duration: 10,
             delay: 0.01,
         })
- gsap.set(opreff.current, { opacity: 0, y: 50 })
+        gsap.set(opreff.current, { opacity: 0, y: 50 })
         gsap.to(opreff.current, {
             y: 0,
             opacity: 1,
@@ -71,18 +98,19 @@ export default function Starting() {
 
 
     return (
-        <div>
-            <span id="move" ><FaReact />
+        <div id="hj" ref={containerRef} className='overflow-hidden relative'>
+            <span id="move" ref={moveRef} style={{ display: 'none' }}>
+                <FaReact />
             </span>
 
             <Nav />
-            <Pic />
+
             <King />
             <MainText displayText="web designer" />
-            <span ref={opref} className='text-8xl absolute left-[65%] top-[40%] text-[#01303f] hover:scale-110  ' id="move2"  ><GiLongLeggedSpider />
+            <span ref={opref} className='text-8xl absolute left-[65%] top-[37%] text-[#01303f] hover:scale-110  ' id="move2"  ><GiLongLeggedSpider />
             </span>
             <And />
-            <span ref={opreff} className='text-8xl absolute left-[15%] top-[65%] text-[#E34F26] hover:scale-110  ' id="move2"  ><IoLogoHtml5 />
+            <span ref={opreff} className='text-8xl absolute left-[15%] top-[60%] text-[#E34F26] hover:scale-110  ' id="move2"  ><IoLogoHtml5 />
             </span>
             <MainText
                 displayText={[
@@ -91,6 +119,7 @@ export default function Starting() {
                     "D", "E", "V", "e", "L", <GiSpiderWeb key="icon" ref={hhref} />, "p", "e", "r"
                 ]}
             />
+            <Pic />
 
         </div>
     )
