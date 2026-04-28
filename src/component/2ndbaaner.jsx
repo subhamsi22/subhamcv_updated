@@ -16,16 +16,16 @@ export default function Baaner() {
     const fullText = el.textContent
     el.textContent = ""
 
-    const obj = { prop: 0 }
+    const obj = { prop: 4 }
 
     gsap.to(obj, {
       prop: fullText.length,
       duration: 3,
-      // ease: "none",
+      ease: "none",
 
       scrollTrigger: {
-        trigger: el,
-        start: "top 90%",
+        trigger: "#about",
+        start: "top 80%",
         scrub: 1,
         markers: true,
       },
@@ -42,7 +42,7 @@ export default function Baaner() {
   }, [])
 
   return (
-    <div className='  w-full mt-20 h-100 overflow-hidden'>
+    <div id='about' className='   w-full mt-[-10%] h-100 overflow-hidden'>
       <Git />
 
       <video
