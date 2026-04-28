@@ -51,7 +51,7 @@ export default function Pic() {
             <h1 className='relative left-[15%]  mt-[-5%]  capitalize  text-2xl dynapuff '>
                 {nme}
             </h1>
-            <button id="ss" className=' hover:scale-110 relative  mt-[-18%]  left-[58%] bg-black text-white rounded  capitalize  text-2xl dynapuff'>{but} </button>
+            <button id="ss" className=' hover:scale-110 relative  mt-[-18%]  left-[58%] bg-black text-white rounded  capitalize  text-2xl dynapuff'><a href="#contact">{but} </a></button>
 
         </div>
 

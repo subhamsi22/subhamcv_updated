@@ -3,6 +3,7 @@ import Starting from './starting'
 import Banner from './component/2ndbaaner'
 import Newsvg from './component/svg'
 import Thirdbanne from './component/_3rdbanne'
+import Footer from './component/footer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Newsvg />
       <Banner />
       <Thirdbanne />
+      <Footer />
     </div>
   )
 }

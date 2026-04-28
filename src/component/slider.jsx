@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import tubeviews from "../pics/tubeviews.png"
+
+import digitel from "../pics/digitel.png"
 
 const slideData = [
     {
         id: 1,
         title: "TubeViews",
         description: "A analytics tool for help youtubers to grow their channel.",
-        image:"",
+        image: tubeviews,
+        link: "https://tubeviews.netlify.app/",
+
     },
     {
         id: 2,
@@ -17,7 +22,8 @@ const slideData = [
         id: 3,
         title: "Digitel Risk",
         description: "A comprehensive risk management platform for digital businesses.",
-        color: "from-green-500 to-teal-500",
+        image: digitel,
+        link: "https://digitel-risk.vercel.app/"
     },
     {
         id: 4,
@@ -63,7 +69,7 @@ export default function Slider() {
     }, [currentIndex, isHovered]);
 
     return (
-        <div className='w-full py-16  flex flex-col items-center justify-center relative'>
+        <div id='slider' className='w-full py-16  flex flex-col items-center justify-center relative'>
             <div className="text-center mb-10 px-4">
                 <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 tracking-tight">Featured Projects</h2>
                 <p className="text-black max-w-lg mx-auto">A showcase of some of my recent work and creations.</p>
@@ -96,6 +102,14 @@ export default function Slider() {
                                 {/* Gradient Background */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${slide.color} opacity-20`}></div>
 
+                                {slide.image && (
+                                    <img
+                                        src={slide.image}
+                                        alt={slide.title}
+                                        className="absolute inset-0 w-full h-full object-cover opacity-40 z-0"
+                                    />
+                                )}
+
                                 {/* Abstract Shapes */}
                                 <div className={`absolute -top-32 -right-32 w-72 h-72 bg-gradient-to-br ${slide.color} rounded-full blur-3xl opacity-30`}></div>
                                 <div className={`absolute -bottom-32 -left-32 w-72 h-72 bg-gradient-to-tr ${slide.color} rounded-full blur-3xl opacity-30`}></div>
@@ -112,7 +126,7 @@ export default function Slider() {
                                         {slide.description}
                                     </p>
                                     <button className="px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-all transform hover:scale-105 duration-200 shadow-xl">
-                                        View Details
+                                        <a href={slide.link}>View Details</a>
                                     </button>
                                 </div>
                             </div>

@@ -8,7 +8,7 @@ export default function THirdbanne() {
 
       <Slider />
 
-      3rdbanne
+
 
     </div >
   )

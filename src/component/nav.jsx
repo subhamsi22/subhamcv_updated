@@ -35,11 +35,11 @@ const Nav = () => {
                 {text}
             </h1>
             <ul className='flex items-center gap-8'>
-                <li className='hover:text-[#2965bf] cursor-pointer text-[#2965bf] font-extrabold uppercase'>Home</li>
-                <li className='hover:text-[#2965bf] cursor-pointer uppercase font-extrabold'>About Me</li>
-                <li className='hover:text-[#2965bf] cursor-pointer uppercase font-extrabold'>Projects</li>
-                <li className='hover:text-[#2965bf] cursor-pointer font-extrabold bg-black text-white px-6 py-2 uppercase rounded-sm transition-all hover:bg-[#2965bf]'>
-                    Contact
+                <li className='hover:text-[#2965bf] cursor-pointer text-[#2965bf] font-extrabold uppercase'><a href="#home">Home</a></li>
+                <li className='hover:text-[#2965bf] cursor-pointer uppercase font-extrabold'><a href="#about">About Me</a></li>
+                <li className='hover:text-[#2965bf] cursor-pointer uppercase font-extrabold'><a href="#slider">Projects</a></li>
+                <li className='hover:text-white cursor-pointer font-extrabold bg-black text-white px-6 py-2 uppercase rounded-sm transition-all hover:bg-[#2965bf]'>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -47,4 +47,4 @@ const Nav = () => {
 }
 
 
-export default Nav
+export default Nav
