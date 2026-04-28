@@ -1,7 +1,8 @@
 import React from 'react'
 import Starting from './starting'
 import Banner from './component/2ndbaaner'
-import Newsvg from './component/svg';
+import Newsvg from './component/svg'
+import Thirdbanne from './component/_3rdbanne'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Starting />
       <Newsvg />
       <Banner />
+      <Thirdbanne />
     </div>
   )
 }
