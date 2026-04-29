@@ -34,10 +34,10 @@ const MainText = ({ displayText }) => {
   }, [displayText])
 
   return (
-    <div className='w-full min-h-[50px] flex justify-center items-center py-10'>
+    <div className='w-full min-h-[50px] flex justify-center items-center py-5 sm:py-8 md:py-10 px-4'>
       <h1
         ref={textRef}
-        className='hover:text-black text-[#01303f] text-9xl text-center cinzel-decorative-bold flex flex-wrap justify-center'
+        className='hover:text-black text-[#01303f] text-5xl sm:text-6xl md:text-7xl lg:text-9xl text-center cinzel-decorative-bold flex flex-wrap justify-center'
       >
         {(Array.isArray(displayText) ? displayText : displayText.split("")).map((char, index) => (
           <span
