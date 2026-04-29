@@ -15,14 +15,20 @@ export default function Footer() {
                         Feel free to reach out for collaborations, inquiries, or just a friendly hello.
                     </p>
 
-                    <form className="space-y-6">
+                    <form action="https://formsubmit.co/subhamsinghkk34@gmail.com" method="POST" className="space-y-6">
+                        {/* Hidden fields for FormSubmit configuration */}
+                        <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio!" />
+                        <input type="hidden" name="_captcha" value="false" />
+                        
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="flex flex-col">
                                 <label className="text-sm text-gray-400 mb-2 font-medium" htmlFor="name">Name</label>
                                 <input
                                     type="text"
                                     id="name"
-                                    placeholder="John Doe"
+                                    name="name"
+                                    required
+                                    placeholder="your name"
                                     className="bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
                                 />
                             </div>
@@ -31,7 +37,9 @@ export default function Footer() {
                                 <input
                                     type="email"
                                     id="email"
-                                    placeholder="john@example.com"
+                                    name="email"
+                                    required
+                                    placeholder="your@example.com"
                                     className="bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
                                 />
                             </div>
@@ -42,7 +50,8 @@ export default function Footer() {
                             <input
                                 type="tel"
                                 id="phone"
-                                placeholder="+1 (555) 000-0000"
+                                name="phone"
+                                placeholder="+91 1111111111"
                                 className="bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
                             />
                         </div>
@@ -51,6 +60,8 @@ export default function Footer() {
                             <label className="text-sm text-gray-400 mb-2 font-medium" htmlFor="message">Message</label>
                             <textarea
                                 id="message"
+                                name="message"
+                                required
                                 rows="4"
                                 placeholder="How can I help you?"
                                 className="bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 resize-none"
@@ -58,7 +69,7 @@ export default function Footer() {
                         </div>
 
                         <button
-                            type="button"
+                            type="submit"
                             className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-bold rounded-lg hover:from-blue-600 hover:to-emerald-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-blue-500/25"
                         >
                             Send Message
