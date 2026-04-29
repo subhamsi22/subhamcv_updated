@@ -17,7 +17,7 @@ export default function And() {
     }, [])
 
     return (
-        <div className='text-9xl cinzel-decorative-bold text-center'>
+        <div className='text-6xl md:text-9xl cinzel-decorative-bold text-center my-5'>
             <h1 ref={desref}>&</h1>
         </div>
     )

@@ -19,11 +19,13 @@ const King = () => {
     }, []);
 
     return (
-        <div className='w-full mt-3'>
-            <h1 ref={containerRef} className='text-center flex justify-center items-center'>
-                <p className='text-5xl'>Hi, I'm </p>
-                <p className='text-5xl m-2 uppercase'>subham singh</p>
-                <FaCrown className='text-5xl text-yellow-500' />
+        <div className='w-full mt-5 px-4'>
+            <h1 ref={containerRef} className='text-center flex flex-col md:flex-row justify-center items-center gap-2'>
+                <p className='text-3xl md:text-5xl'>Hi, I'm </p>
+                <div className='flex items-center gap-2'>
+                    <p className='text-3xl md:text-5xl uppercase font-bold'>subham singh</p>
+                    <FaCrown className='text-3xl md:text-5xl text-yellow-500' />
+                </div>
             </h1>
         </div>
     )
