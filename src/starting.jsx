@@ -23,14 +23,14 @@ export default function Starting() {
 
     useEffect(() => {
         const mouse = (e) => {
-            if (moveRef.current) {
+            if (window.innerWidth >= 768 && moveRef.current) {
                 moveRef.current.style.left = e.clientX + "px"
                 moveRef.current.style.top = e.clientY + "px"
             }
         }
 
         const handleMouseEnter = () => {
-            if (moveRef.current) moveRef.current.style.display = "block"
+            if (window.innerWidth >= 768 && moveRef.current) moveRef.current.style.display = "block"
         }
 
         const handleMouseLeave = () => {
